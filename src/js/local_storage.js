@@ -25,7 +25,6 @@ function get_all_flight(i = 0, key = 'departure', callback = 'create_table') {
       }
     });
     
-    
     // получаем рейсы через API Яндекс.Расписания
     $.getJSON(create_url(event, STATION_DEFAULT, i * OFFSET), function (data) {
       if (data.hasOwnProperty('schedule')) {

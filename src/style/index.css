@@ -211,5 +211,6 @@ h1 {
       width: 90%;
       padding: 1.5em; } }
 
-.tt-error {
-  margin-top: 1em; }
+.error {
+  margin-top: 1em;
+  color: #8b0000; }

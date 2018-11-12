@@ -7,7 +7,7 @@ const STATION_DEFAULT = 's9600213'; // значение по-умолчанию 
 const BODY_URL = ['?apikey=' + APIKEY, 'format=json', 'lang=ru_RU', 'transport_types=plane']; // тело GET-запроса
 const DELAY_PERSENT = 2; // вероятность задержки рейса
 const OFFSET = 100; // ограничение по рейсам за запрос ( API )
-const URL = 'https://api.rasp.yandex.net/v3.0/schedule/'; // адрес API
+const URL = 'http://localhost:3000/'; // адрес для перехвата ответа с API
 const UPDATE_TIME = 60000;
 
 // создаём ключи для доступа в locale storage
