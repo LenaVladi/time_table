@@ -21,7 +21,7 @@ function get_all_flight(i = 0, key = 'departure', callback = 'create_table') {
     
     $.ajaxSetup({
       headers: {
-        'Access-Control-Allow-Origin': 'https://lenavladi.github.io'
+        'Access-Control-Allow-Origin': '*'
       }
     });
     
