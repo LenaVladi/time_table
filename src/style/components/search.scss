@@ -1,0 +1,38 @@
+.form {
+    width: 100%;
+}
+
+.form__search-wrap {
+    display: flex;
+}
+
+.form__search-input {
+    width: 90%;
+    min-height: 20px;
+    border: 1px solid #999;
+    padding: 0.5em 1em;
+    margin-right: 1em;
+    color: $text;
+
+}
+
+.form__search-input:focus {
+    outline: none;
+    border: 1px solid $blue;
+}
+
+.form__search-submit {
+    background-color: #fff;
+    color: $text;
+    border: 1px solid #999;
+    transition: all 0.2s ease;
+
+    @include  respond-to($hover) {
+        &:hover {
+            background-color: $blue_hover;
+            border-color: $blue_hover;
+            color: #fff;
+            opacity: 1;
+        }
+    }
+}

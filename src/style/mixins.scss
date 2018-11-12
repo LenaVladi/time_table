@@ -1,0 +1,11 @@
+$mobile : '(max-width: 640px)';
+$tablet: '(max-width: 1024px)';
+$desktop: '(min-width: 1025px)';
+$desktop_m: '(min-width: 1280px)';
+$hover: $desktop;
+
+@mixin respond-to($media) {
+  @media only screen and #{$media} {
+    @content;
+  }
+}

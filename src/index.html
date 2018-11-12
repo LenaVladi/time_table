@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timetable</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+</head>
+<body>
+<main class="viewport">
+    <h1>Табло рейсов</h1>
+    <section class="tabs">
+        <ul class="tabs__list">
+            <li class="tabs__tab active" data-event="departure">Вылет</li>
+            <li class="tabs__tab" data-event="arrival">Прилёт</li>
+            <li class="tabs__tab" data-event="delay">Задержанные</li>
+        </ul>
+    </section>
+    <form action="" class="form">
+        <div class="form__search-wrap">
+            <input type="text" class="form__search-input">
+            <button type="button" class="form__search-submit">найти</button>
+        </div>
+    </form>
+    <div class="filter">
+        <label for="1" class="filter__label">
+            <input type="radio" name="stantion" class="filter__radio" data-stantion="s9600213" id="1" checked>
+            Шереметьево
+        </label>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="table__th" data-type="time">Время / Дата</th>
+            <th class="table__th" data-type="to">Направление рейса</th>
+            <th class="table__th" data-type="number">Номер рейса / Авиакомпания</th>
+            <th class="table__th" data-type="terminal">Терминал</th>
+            <th class="table__th" data-type="status">Статус полёта</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div class="error"></div>
+    <div class="preloader">
+        <img src="./image/preloader.gif" alt="Please wait..." width="300">
+    </div>
+</main>
+<div class="overlay"></div>
+<div class="modal-info"></div>
+
+<script id="table_row" type="text/x-jquery-tmpl">
+  <tr class="table__tr">
+    <td data-th="Время / Дата" class="table__td">${time} / ${date}</td>
+    <td data-th="Направление рейса" class="table__td">${from_to}</td>
+    <td data-th="Номер рейса / Авиакомпания" class="table__td">${number} / ${company}</td>
+    <td data-th="Терминал" class="table__td">${terminal}</td>
+    <td data-th="Статус полёта" class="table__td">${status}</td>
+  </tr>
+</script>
+
+<script src="js/constants.js" defer></script>
+<script src="js/manager.js" defer></script>
+<script src="js/local_storage.js" defer></script>
+<script src="js/table.js" defer></script>
+<script src="js/handlers.js" defer></script>
+<script src="js/script.js" defer></script>
+</body>
+</html>

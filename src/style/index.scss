@@ -1,0 +1,86 @@
+@import "variables";
+@import "mixins";
+
+@import "components/search";
+@import "components/table";
+@import "components/tabs";
+@import "components/panel";
+@import "components/filter";
+@import "components/preloader";
+
+  body {
+    font-family: 'Montserrat', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: $text;
+    font-weight: 100;
+
+    @include respond-to($desktop) {
+      font-size: 0.9em;
+    }
+
+    @include respond-to($desktop_m) {
+      font-size: 1em;
+    }
+
+    @include respond-to($tablet) {
+      font-size: 0.9em;
+    }
+  }
+
+  h1 {
+    font-size: 5em;
+    font-weight: 100;
+    margin: 0.5em auto 0.2em;
+
+    @include respond-to($tablet) {
+      font-size: 4em;
+    }
+
+    @include respond-to($mobile) {
+      font-size: 3em;
+    }
+  }
+  
+  .overlay {
+    position: fixed;
+    top: -2%;
+    left: -2%;
+    right: -2%;
+    bottom: -2%;
+    width: 104%;
+    height: 104%;
+    background: linear-gradient( rgba(255, 255, 255, 1), rgba(0, 0, 255, 1));
+    background-image: url(../image/sky_blue_1366.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+  }
+
+  .viewport {
+    margin: 50px auto;
+    max-width: 1360px;
+    width: 90%;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 0.5em;
+
+    @include respond-to((max-width: 1024px)) {
+      max-width: 1024px;
+      width: 90%;
+    }
+
+    @include respond-to($mobile) {
+      max-width: 640px;
+      width: 90%;
+      padding: 1.5em;
+    }
+  }
+
+  .tt-error {
+    margin-top: 1em;
+  }

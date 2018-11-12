@@ -1,0 +1,40 @@
+.tabs__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs__tab {
+    display: inline-block;
+    padding: 1em;
+    font-size: 2em;
+    line-height: normal;
+    color: $blue;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    @include  respond-to($hover) {
+        &:hover {
+            color: $blue_hover;
+            opacity: 1;
+        }
+    }
+
+    @include  respond-to($tablet) {
+        padding: 0.5em;
+        font-size: 1.7em;
+    }
+
+    @include  respond-to($mobile) {
+        font-size: 1.3em;
+    }
+}
+
+.tabs__tab.active {
+    opacity: 1;
+}
+
+.tabs__tab:first-child {
+    padding-left: 0;
+}
